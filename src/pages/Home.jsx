@@ -80,7 +80,6 @@ export default class Home extends Component {
                   />
                 </Link>
               ))}
-            {results.length === 0 && <h3>Nenhum produto foi encontrado</h3>}
           </div>
           {loading ? (
             <Loading />
@@ -113,6 +112,8 @@ export default class Home extends Component {
                   />
                 </Link>
               ))}
+              {results.length === 0 && !productsByCategory.length
+              ? <h3>Nenhum produto foi encontrado</h3> : null }
           </div>
         </main>
       </>
