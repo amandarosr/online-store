@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Categories from '../components/Categories';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
-import Card from '../components/Card';
+import CardMain from '../components/CardMain';
 import {
   getCategories,
   getProductsFromCategoryAndQuery,
@@ -73,7 +73,7 @@ export default class Home extends Component {
                   key={ result.id }
                   data-testid="product-detail-link"
                 >
-                  <Card
+                  <CardMain
                     name={ result.title }
                     img={ result.thumbnail }
                     price={ result.price }
@@ -85,7 +85,7 @@ export default class Home extends Component {
           {loading ? (
             <Loading />
           ) : (
-            <div className="category">
+            <div className="categories" >
               {categoryList
                 && categoryList.map((products) => (
                   <Categories
@@ -105,7 +105,7 @@ export default class Home extends Component {
                   key={ products.id }
                   data-testid="product-detail-link"
                 >
-                  <Card
+                  <CardMain
                     data-testid="product"
                     img={ products.thumbnail }
                     name={ products.title }

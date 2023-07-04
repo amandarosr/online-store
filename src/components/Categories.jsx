@@ -16,6 +16,7 @@ export default class Categories extends Component {
             id={ `category-${name}` }
             name="category"
             onClick={ categoryProducts }
+            className="category-radio"
           />
           { name }
         </label>

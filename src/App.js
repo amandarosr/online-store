@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import CartShop from './pages/CartShop';
 import ProductDetails from './pages/ProductDetails';
 import './App.css';
+import "bulma/css/bulma.min.css";
 
 function App() {
   return (
