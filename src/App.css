@@ -114,7 +114,7 @@ main {
 
 .main-card p {
   background-color: white;
-  border: 1.5px solid rgb(255, 160, 76);
+  border: 1.8px solid rgb(255, 160, 76);
   color: rgb(255, 160, 76);
   border-radius: 10px;
   box-shadow: rgba(139, 134, 134, 0.15) 0px 8px 16px 0px;
@@ -123,12 +123,12 @@ main {
   margin: 20px 68px 10px;
   padding: 5px;
   padding-top: 8px;
+  text-shadow: 2px 2px 1px rgb(230, 230, 230);
 }
 
 .main-card p span {
   font-size: 14px;
-  font-weight: normal;
-  left: -1px;
+  left: -2px;
   position: relative;
   top: -4px;
 }

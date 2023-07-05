@@ -61,6 +61,7 @@ header {
   font-weight: bold;
   height: 34px;
   padding: 5px 13px;
+  text-shadow: 2px 2px 1px rgba(194, 113, 38, 0.6);
 }
 
 .search-btn {
