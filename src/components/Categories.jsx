@@ -9,6 +9,7 @@ export default class Categories extends Component {
         <label
           htmlFor={ `category-${name}` }
           data-testid="category"
+          className="radio-label"
         >
           <input
             type="radio"
@@ -18,7 +19,7 @@ export default class Categories extends Component {
             onClick={ categoryProducts }
             className="category-radio"
           />
-          { name }
+          <span>{ name }</span>
         </label>
       </aside>
     );

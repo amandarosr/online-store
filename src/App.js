@@ -7,7 +7,7 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+    <div className="body-container">
       <Switch>
         <Route exact path="/" component={ Home } />
         <Route exact path="/cartShop" component={ CartShop } />

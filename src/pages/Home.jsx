@@ -56,7 +56,7 @@ export default class Home extends Component {
     const { categoryList, loading, inputValue, results,
         productsByCategory, searched } = this.state;
     return (
-      <>
+      <div className="home-container">
         <Header
           clickForProducts={ this.clickForProducts }
           inputValue={ inputValue }
@@ -122,7 +122,7 @@ export default class Home extends Component {
               )) : null }
           </div>
         </main>
-      </>
+      </div>
     );
   }
 }

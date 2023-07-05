@@ -1,54 +1,26 @@
-.App {
-  text-align: center;
+html {
+  background-color: rgb(243, 240, 215);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.body-container {
+  height: 100%;
+  width: 100%;
 }
 
-@media ( prefers-reduced-motion : no-preference ) {
-
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-
-}
-
-.App-header {
-  align-items: center;
-  background-color: #282c34;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  font-size: calc(10px + 2vmin);
-  justify-content: center;
-  min-height: 100vh;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.home-container {
+  height: 100%;
+  width: 100%;
 }
 
 .categories {
-  border-radius: 5px;
+  background-color: white;
+  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
   display: flex;
   flex-flow: column wrap;
   float: left;
   justify-content: center;
-  margin: 20px 15px;
+  margin: 10px 15px;
   min-width: 20%;
   padding: 15px;
   padding-left: 20px;
@@ -59,7 +31,16 @@
   margin: 1px 3px;
 }
 
+.radio-label span {
+  position: relative;
+  font-size: 17px;
+  top: -5px;
+  left: 2px;
+}
+
 .category-radio {
+  accent-color: rgb(212, 125, 59);
+  height: 20px;
   margin: 0 2px;
 }
 
@@ -75,9 +56,10 @@
 }
 
 .main-card {
-  border-radius: 5px;
+  background-color: white;
+  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
-  margin: 20px 10px 30px;
+  margin: 10px 10px 30px;
   padding: 16px;
   text-align: center;
   width: 18vw;
@@ -85,29 +67,35 @@
 
 .main-card h3 {
   color: rgb(73, 73, 73);
+  height: 26px;
   line-height: 18px;
   margin: 10px 0;
   overflow: hidden;
   padding: 10px 0;
   text-shadow: 1px 1px 1px rgba(190, 170, 153, 0.5);
-  white-space: nowrap;
 }
 
 .main-card img {
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
   width: 100%;
 }
 
 .main-card p {
-  background-color: rgba(224, 115, 26, 0.9);
-  border: 4px groove rgba(204, 105, 24, 0.5);
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
-  color: white;
-  font-size: 18px;
-  font-weight: 500;
-  margin: 10px 65px;
+  border: 1.5px solid rgb(255, 160, 76);
+  color: rgb(255, 160, 76);
+  border-radius: 10px;
+  box-shadow: rgba(139, 134, 134, 0.15) 0px 8px 16px 0px;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px 65px 10px;
   padding: 5px;
-  text-shadow: 1px 1px 1px #5a4b3b;
+}
+
+.main-card p span {
+  font-size: 14px;
+  font-weight: normal;
+  left: -1px;
+  position: relative;
+  top: -4px;
 }
