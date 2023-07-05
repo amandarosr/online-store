@@ -63,12 +63,6 @@ export default class Home extends Component {
           onInputChange={ this.handleChange }
         />
         <main>
-          <h3
-            className="initialMessage"
-            data-testid="home-initial-message"
-          >
-            Digite algum termo de pesquisa ou escolha uma categoria.
-          </h3>
           {loading ? (
             <Loading />
           ) : (
@@ -103,23 +97,33 @@ export default class Home extends Component {
               { !results.length && searched
               ? <h3>Nenhum produto foi encontrado</h3> : null }
           </div>
-          <div id="productsCategory">
-            {productsByCategory && !searched
-              ? productsByCategory.map((products) => (
-                <Link
-                  to={ `product/${products.id}` }
-                  key={ products.id }
-                  data-testid="product-detail-link"
-                  className="card-link"
-                >
-                  <CardMain
-                    data-testid="product"
-                    img={ products.thumbnail }
-                    name={ products.title }
-                    price={ products.price }
-                  />
-                </Link>
-              )) : null }
+          <div className="second-div">
+            { !results.length && !productsByCategory.length
+            ?  <h3
+              className="initialMessage"
+              data-testid="home-initial-message"
+            >
+              Digite algum termo de pesquisa ou escolha uma categoria
+            </h3> : null
+            }
+            <div id="productsCategory">
+              {productsByCategory && !searched
+                ? productsByCategory.map((products) => (
+                  <Link
+                    to={ `product/${products.id}` }
+                    key={ products.id }
+                    data-testid="product-detail-link"
+                    className="card-link"
+                  >
+                    <CardMain
+                      data-testid="product"
+                      img={ products.thumbnail }
+                      name={ products.title }
+                      price={ products.price }
+                    />
+                  </Link>
+                )) : null }
+            </div>
           </div>
         </main>
       </div>
