@@ -133,6 +133,7 @@ class Reviews extends React.Component {
         <button
           data-testid="submit-review-btn"
           type="button"
+          className="review-btn"
           onClick={ () => {
             if (!emailValid || !ratingValid) {
               this.setState({
