@@ -11,7 +11,7 @@ class CardMain extends React.Component {
           alt={ name }
         />
         <h3>{ name }</h3>
-        <p><span>R$</span>{ price }</p>
+        <p><span>R$</span>{ price.toFixed(2) }</p>
       </div>
     );
   }
