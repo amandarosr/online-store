@@ -40,6 +40,7 @@ export default class Header extends Component {
             Carrinho
           </button>
         </Link>
+        <h1 className="header-title">Online Shop</h1>
       </header>
     );
   }

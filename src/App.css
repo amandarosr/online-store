@@ -1,8 +1,19 @@
+@font-face {
+  font-family: Modestic Sans Bold;
+  src: url("./fonts/ModesticSans-Bold.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: Metropolis;
+  src: url("./fonts/metropolis.regular.otf") format('opentype');
+}
+
 html {
   background-color: rgb(243, 240, 215);
 }
 
 .body-container {
+  font-family: Metropolis , serif;
   height: 100%;
   width: 100%;
 }
@@ -13,7 +24,7 @@ html {
 }
 
 .categories {
-  background-color: white;
+  background-color: rgb(255, 255, 238);
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
   display: flex;
@@ -56,7 +67,7 @@ html {
 }
 
 .main-card {
-  background-color: white;
+  background-color: rgb(255, 255, 238);
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
   margin: 10px 10px 30px;
@@ -82,6 +93,7 @@ html {
 }
 
 .main-card p {
+  background-color: white;
   border: 1.5px solid rgb(255, 160, 76);
   color: rgb(255, 160, 76);
   border-radius: 10px;

@@ -1,5 +1,13 @@
 header {
   background: rgb(150, 206, 180);
+  display: flex;
+  flex-flow: row;
   height: 60px;
   width: 100%;
+}
+
+.header-title {
+  color: rgb(255, 255, 238);
+  font-family: Modestic Sans Bold , sans-serif;
+  text-shadow: 2px 2px 3px rgba(254, 210, 170, 0.8);
 }
