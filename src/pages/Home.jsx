@@ -16,6 +16,7 @@ export default class Home extends Component {
     inputValue: '',
     results: [],
     productsByCategory: [],
+    searched: false,
   };
 
   componentDidMount() {
@@ -38,6 +39,7 @@ export default class Home extends Component {
     const apiProducts = await getProductsFromCategoryAndQuery('', inputValue);
     const data = apiProducts.results;
     this.setState({
+      searched: true,
       results: data,
     });
   };
@@ -46,11 +48,13 @@ export default class Home extends Component {
     const products = await getProductsFromCategoryAndQuery(categoryId);
     this.setState({
       productsByCategory: products.results,
+      searched: false,
     });
   };
 
   render() {
-    const { categoryList, loading, inputValue, results, productsByCategory } = this.state;
+    const { categoryList, loading, inputValue, results,
+        productsByCategory, searched } = this.state;
     return (
       <>
         <Header
@@ -65,22 +69,6 @@ export default class Home extends Component {
           >
             Digite algum termo de pesquisa ou escolha uma categoria.
           </h3>
-          <div id="card-container">
-            {results
-              && results.map((result) => (
-                <Link
-                  to={ `product/${result.id}` }
-                  key={ result.id }
-                  data-testid="product-detail-link"
-                >
-                  <CardMain
-                    name={ result.title }
-                    img={ result.thumbnail }
-                    price={ result.price }
-                  />
-                </Link>
-              ))}
-          </div>
           {loading ? (
             <Loading />
           ) : (
@@ -96,13 +84,33 @@ export default class Home extends Component {
                 ))}
             </div>
           )}
+          <div id="card-container">
+            { results.length && searched
+              ? results.map((result) => (
+                <Link
+                  to={ `product/${result.id}` }
+                  key={ result.id }
+                  data-testid="product-detail-link"
+                  className="card-link"
+                >
+                  <CardMain
+                    name={ result.title }
+                    img={ result.thumbnail }
+                    price={ result.price }
+                  />
+                </Link>
+              )) : null }
+              { !results.length && searched
+              ? <h3>Nenhum produto foi encontrado</h3> : null }
+          </div>
           <div id="productsCategory">
-            {productsByCategory
-              && productsByCategory.map((products) => (
+            {productsByCategory && !searched
+              ? productsByCategory.map((products) => (
                 <Link
                   to={ `product/${products.id}` }
                   key={ products.id }
                   data-testid="product-detail-link"
+                  className="card-link"
                 >
                   <CardMain
                     data-testid="product"
@@ -111,9 +119,7 @@ export default class Home extends Component {
                     price={ products.price }
                   />
                 </Link>
-              ))}
-              {results.length === 0 && !productsByCategory.length
-              ? <h3>Nenhum produto foi encontrado</h3> : null }
+              )) : null }
           </div>
         </main>
       </>
