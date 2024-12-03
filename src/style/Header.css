@@ -15,7 +15,7 @@ header {
 
 .left-head {
   display: flex;
-  margin: 0 0 -45px 25px;
+  margin: 0 0 -45px 35px;
 }
 
 #title {
@@ -53,7 +53,7 @@ header {
   justify-content: space-evenly;
   border-radius: 50px;
   height: 38px;
-  width: 85px;
+  width: 100px;
 }
 
 .headBtn {

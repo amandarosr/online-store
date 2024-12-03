@@ -1,10 +1,16 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .category {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     margin: 20px 20px 70px;
-    font-size: 20px;
-    height: 135px;
+    font-size: 19px;
+    height: 132px;
     overflow-y: scroll;
     scrollbar-color: #D1C360 white;
     scrollbar-width: thin;
@@ -14,7 +20,7 @@
     color: #6B2138;
     text-shadow: 1px 1px rgba(0,0,0,0.12);
     text-align: center;
-    margin: 25px 10px 45px;
+    margin: 30px 10px 45px;
 }
 
 .aside {
@@ -31,4 +37,10 @@
     flex-flow: row wrap;
     justify-content: space-around;
     margin: 0 50px;
+    max-width: 90%;
+}
+
+.cardLink {
+    text-decoration: none;
+    width: 190px;
 }

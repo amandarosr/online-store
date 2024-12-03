@@ -81,13 +81,14 @@ export default class Home extends Component {
           >
             Digite algum termo de pesquisa ou escolha uma categoria.
           </h2>
-          <div id="card-container cards">
+          <div id="card-container" className="cards">
             {results
               && results.map((result) => (
                 <Link
                   to={ `product/${result.id}` }
                   key={ result.id }
                   data-testid="product-detail-link"
+                  className="cardLink"
                 >
                   <Card
                     name={ result.title }
@@ -120,6 +121,7 @@ export default class Home extends Component {
                   to={ `product/${products.id}` }
                   key={ products.id }
                   data-testid="product-detail-link"
+                  className="cardLink"
                 >
                   <Card
                     data-testid="product"

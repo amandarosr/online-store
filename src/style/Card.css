@@ -1,0 +1,22 @@
+.productCard {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin: 10px 2%;
+}
+
+span {
+    display: flex;
+}
+
+.productImg {
+    border: 2px solid #6B2138;
+    border-radius: 5px;
+    width: 95%;
+}
+
+.productName {
+    text-align: center;
+    height: 60px;
+    overflow-y: hidden;
+}
