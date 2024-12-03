@@ -1,7 +1,7 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import "./Header.css";
+import "../style/Header.css";
 import cart from "../images/cart.png";
 import search from "../images/search.png";
 

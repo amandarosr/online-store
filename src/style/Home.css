@@ -1,0 +1,25 @@
+.category {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 20px;
+    font-size: 20px;
+}
+
+.initialMessage {
+    color: #6B2138;
+    text-shadow: 1px 1px rgba(0,0,0,0.12);
+    text-align: center;
+    margin: 25px 0 45px;
+}
+
+.aside {
+    margin: 5px 10px;
+}
+
+.cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    margin: 0 50px;
+}

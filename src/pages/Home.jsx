@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import "../style/Home.css";
 import Categories from '../components/Categories';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
@@ -21,6 +22,7 @@ export default class Home extends Component {
 
   componentDidMount() {
     this.fetchCategoryList();
+    this.clickCategoryForProducts('MLB1246');
   }
 
   handleChange = ({ target }) => {
@@ -73,13 +75,13 @@ export default class Home extends Component {
           onInputChange={ this.handleChange }
         />
         <main>
-          <h3
+          <h2
             className="initialMessage"
             data-testid="home-initial-message"
           >
             Digite algum termo de pesquisa ou escolha uma categoria.
-          </h3>
-          <div id="card-container">
+          </h2>
+          <div id="card-container cards">
             {results
               && results.map((result) => (
                 <Link
@@ -111,7 +113,7 @@ export default class Home extends Component {
                 ))}
             </div>
           )}
-          <div id="productsCategory">
+          <div id="productsCategory" className="cards">
             {productsByCategory
               && productsByCategory.map((products) => (
                 <Link
