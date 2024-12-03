@@ -12,7 +12,6 @@ export default class Header extends Component {
     return (
       <header>
         <div className="left-head">
-          {/* <img src={bags} alt="logo" id="bags" /> */}
           <h1 id="title">fake•store</h1>
         </div>
         <div id="searchDiv">
@@ -32,7 +31,7 @@ export default class Header extends Component {
               data-testid="query-button"
               onClick={clickForProducts}
             >
-              <img src={search} alt="search" className="headerPics" />
+              <img src={search} alt="search" className="headerIcon" />
             </button>
             <Link to="/cartShop" data-testid="shopping-cart-button">
               <button
@@ -41,7 +40,7 @@ export default class Header extends Component {
                 id="cartBtn"
                 className="headBtn"
               >
-                <img src={cart} alt="cart" className="headerPics" />
+                <img src={cart} alt="cart" className="headerIcon" />
               </button>
             </Link>
           </div>

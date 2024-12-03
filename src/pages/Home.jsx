@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "../style/Home.css";
-import Categories from '../components/Categories';
-import Header from '../components/Header';
-import Loading from '../components/Loading';
-import Card from '../components/Card';
+import Categories from "../components/Categories";
+import Header from "../components/Header";
+import Loading from "../components/Loading";
+import Card from "../components/Card";
 import {
   getCategories,
   getProductsFromCategoryAndQuery,
-} from '../services/api';
+} from "../services/api";
 
 export default class Home extends Component {
   state = {
     categoryList: [],
     loading: false,
-    inputValue: '',
+    inputValue: "",
     results: [],
     productsByCategory: [],
     noResults: false,
@@ -22,7 +22,7 @@ export default class Home extends Component {
 
   componentDidMount() {
     this.fetchCategoryList();
-    this.clickCategoryForProducts('MLB1246');
+    this.clickCategoryForProducts("MLB1246");
   }
 
   handleChange = ({ target }) => {
@@ -38,7 +38,7 @@ export default class Home extends Component {
 
   clickForProducts = async () => {
     const { inputValue } = this.state;
-    const apiProducts = await getProductsFromCategoryAndQuery('', inputValue);
+    const apiProducts = await getProductsFromCategoryAndQuery("", inputValue);
     const data = apiProducts.results;
     this.setState({
       results: data,
@@ -46,8 +46,8 @@ export default class Home extends Component {
     });
     if (data.length === 0) {
       this.setState({
-        noResults: true
-      })
+        noResults: true,
+      });
     }
   };
 
@@ -59,41 +59,44 @@ export default class Home extends Component {
     });
     if (products.results.length === 0) {
       this.setState({
-        noResults: true
-      })
+        noResults: true,
+      });
     }
   };
 
   render() {
-    const { categoryList, loading, inputValue, results, 
-      productsByCategory, noResults } = this.state;
+    const {
+      categoryList,
+      loading,
+      inputValue,
+      results,
+      productsByCategory,
+      noResults,
+    } = this.state;
     return (
       <>
         <Header
-          clickForProducts={ this.clickForProducts }
-          inputValue={ inputValue }
-          onInputChange={ this.handleChange }
+          clickForProducts={this.clickForProducts}
+          inputValue={inputValue}
+          onInputChange={this.handleChange}
         />
         <main>
-          <h2
-            className="initialMessage"
-            data-testid="home-initial-message"
-          >
+          <h2 className="initialMessage" data-testid="home-initial-message">
             Digite algum termo de pesquisa ou escolha uma categoria.
           </h2>
           <div id="card-container" className="cards">
-            {results
-              && results.map((result) => (
+            {results &&
+              results.map((result) => (
                 <Link
-                  to={ `product/${result.id}` }
-                  key={ result.id }
+                  to={`product/${result.id}`}
+                  key={result.id}
                   data-testid="product-detail-link"
                   className="cardLink"
                 >
                   <Card
-                    name={ result.title }
-                    img={ result.thumbnail }
-                    price={ result.price }
+                    name={result.title}
+                    img={result.thumbnail}
+                    price={result.price}
                   />
                 </Link>
               ))}
@@ -103,36 +106,41 @@ export default class Home extends Component {
             <Loading />
           ) : (
             <div className="category">
-              {categoryList
-                && categoryList.map((products) => (
+              {categoryList &&
+                categoryList.map((products) => (
                   <Categories
-                    categoryProducts={ () => this.clickCategoryForProducts(products.id) }
-                    key={ products.id }
-                    name={ products.name }
-                    value={ products.name }
+                    categoryProducts={() =>
+                      this.clickCategoryForProducts(products.id)
+                    }
+                    key={products.id}
+                    name={products.name}
+                    value={products.name}
                   />
                 ))}
             </div>
           )}
           <div id="productsCategory" className="cards">
-            {productsByCategory
-              && productsByCategory.map((products) => (
+            {productsByCategory &&
+              productsByCategory.map((products) => (
                 <Link
-                  to={ `product/${products.id}` }
-                  key={ products.id }
+                  to={`product/${products.id}`}
+                  key={products.id}
                   data-testid="product-detail-link"
                   className="cardLink"
                 >
                   <Card
                     data-testid="product"
-                    img={ products.thumbnail }
-                    name={ products.title }
-                    price={ products.price }
+                    img={products.thumbnail}
+                    name={products.title}
+                    price={products.price}
                   />
                 </Link>
               ))}
           </div>
         </main>
+        <footer>
+          <p>© 2024 fake•store. All Rights Reserved</p>
+        </footer>
       </>
     );
   }
