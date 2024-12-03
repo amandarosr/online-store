@@ -16,6 +16,7 @@ export default class Home extends Component {
     inputValue: '',
     results: [],
     productsByCategory: [],
+    noResults: false,
   };
 
   componentDidMount() {
@@ -39,18 +40,31 @@ export default class Home extends Component {
     const data = apiProducts.results;
     this.setState({
       results: data,
+      noResults: false,
     });
+    if (data.length === 0) {
+      this.setState({
+        noResults: true
+      })
+    }
   };
 
   clickCategoryForProducts = async (categoryId) => {
     const products = await getProductsFromCategoryAndQuery(categoryId);
     this.setState({
       productsByCategory: products.results,
+      noResults: false,
     });
+    if (products.results.length === 0) {
+      this.setState({
+        noResults: true
+      })
+    }
   };
 
   render() {
-    const { categoryList, loading, inputValue, results, productsByCategory } = this.state;
+    const { categoryList, loading, inputValue, results, 
+      productsByCategory, noResults } = this.state;
     return (
       <>
         <Header
@@ -80,7 +94,7 @@ export default class Home extends Component {
                   />
                 </Link>
               ))}
-            {results.length === 0 && <h3>Nenhum produto foi encontrado</h3>}
+            {noResults && <h3>Nenhum produto foi encontrado</h3>}
           </div>
           {loading ? (
             <Loading />

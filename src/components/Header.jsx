@@ -16,17 +16,15 @@ export default class Header extends Component {
           <h1 id="title">fake•store</h1>
         </div>
         <div id="searchDiv">
-          <label htmlFor="searchArea">
-            <input
-              type="text"
-              id="searchArea"
-              data-testid="query-input"
-              name="inputValue"
-              value={inputValue}
-              onChange={onInputChange}
-            />
-          </label>
-          <label htmlFor="queryBtn">
+          <input
+            type="text"
+            id="searchArea"
+            data-testid="query-input"
+            name="inputValue"
+            value={inputValue}
+            onChange={onInputChange}
+          />
+          <div className="iconCase">
             <button
               type="button"
               id="queryBtn"
@@ -36,17 +34,17 @@ export default class Header extends Component {
             >
               <img src={search} alt="search" className="headerPics" />
             </button>
-          </label>
-          <Link to="/cartShop" data-testid="shopping-cart-button">
-            <button 
-            type="button" 
-            name="btn-ShopCart" 
-            id="cartBtn"
-            className="headBtn"
-            >
-              <img src={cart} alt="cart" className="headerPics" />
-            </button>
-          </Link>
+            <Link to="/cartShop" data-testid="shopping-cart-button">
+              <button
+                type="button"
+                name="btn-ShopCart"
+                id="cartBtn"
+                className="headBtn"
+              >
+                <img src={cart} alt="cart" className="headerPics" />
+              </button>
+            </Link>
+          </div>
         </div>
       </header>
     );
