@@ -3,12 +3,11 @@
     color: rgb(107, 33, 56, 0.9);
     flex-flow: column nowrap;
     align-items: center;
-    margin: 10px 4%;
+    margin: 15px 5%;
 }
 
 .productCard:hover {
-    color: #3269c9;
-    font-weight: 600;
+    color: rgb(247, 77, 77);
 }
 
 .productImg {
@@ -27,7 +26,7 @@
 
 span {
     display: flex;
-    color: #3269c9;
+    color: rgb(26, 23, 23, 0.8);
     /* font-weight: 600; */
     margin-top: -30px
 }
