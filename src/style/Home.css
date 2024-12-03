@@ -1,57 +1,59 @@
+@font-face {
+  font-family: TitleFont;
+  src: url("../images/Aurora.otf");
+}
+
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 75vh;
 }
 
 .category {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    margin: 20px 20px 70px;
-    font-size: 19px;
-    height: 132px;
-    overflow-y: scroll;
-    scrollbar-color: #D1C360 white;
-    scrollbar-width: thin;
-}
-
-.initialMessage {
-    color: #6B2138;
-    text-shadow: 1px 1px rgba(0,0,0,0.12);
-    text-align: center;
-    margin: 30px 10px 45px;
+  color: #430f1f;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 45px 20px 20px;
+  font-size: 18px;
+  height: 135px;
+  padding: 10px;
+  overflow-y: scroll;
+  scrollbar-color: #d1c360 white;
+  scrollbar-width: thin;
 }
 
 .aside {
-    margin: 5px 10px;
+  margin: 5px;
 }
 
 .aside input[type="radio"] {
-    accent-color: #6B2138;
-    height: 7px;
+  accent-color: #430f1f;
+  height: 11px;
 }
 
 .cards {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    margin: 0 50px;
-    max-width: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 15px 50px;
+  max-width: 90%;
 }
 
 .cardLink {
-    text-decoration: none;
-    width: 190px;
+  text-decoration: none;
+  width: 190px;
 }
 
 footer {
-    background-color: rgb(209, 195, 96, 0.8);
-    border-top: 2px solid rgb(107, 33, 56, 0.6);
-    color:rgb(107, 33, 56);
-    text-align: center;
-    font-weight: 500;
-    height: 45px;
-    margin-top: 40px;
-    margin-bottom: 0;
+  background-color: rgb(209, 195, 96, 0.8);
+  border-top: 2px solid rgb(107, 33, 56, 0.6);
+  color: rgb(107, 33, 56);
+  text-align: center;
+  font-weight: 600;
+  font-family: TitleFont;
+  height: 7vh;
+  padding: -5px 0 5px;
+  margin-top: 30px;
 }

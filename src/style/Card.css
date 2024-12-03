@@ -7,12 +7,12 @@
 }
 
 .productCard:hover {
-    color: rgb(47, 47, 255);
+    color: #3269c9;
     font-weight: 600;
 }
 
 .productImg {
-    border: 2px solid rgba(117, 38, 63, 0.85);
+    border: 2px solid rgba(117, 38, 63, 0.7);
     border-radius: 5px;
     width: 95%;
 }
@@ -33,10 +33,10 @@ span {
 }
 
 .priceSymbol {
-    font-size: 15px;
+    font-size: 14px;
     margin-top: 28px;
 }
 
 .priceNumber {
-    font-size: 26px;
+    font-size: 25px;
 }

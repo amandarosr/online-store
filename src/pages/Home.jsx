@@ -16,7 +16,6 @@ export default class Home extends Component {
     loading: false,
     inputValue: "",
     results: [],
-    productsByCategory: [],
     noResults: false,
   };
 
@@ -54,7 +53,7 @@ export default class Home extends Component {
   clickCategoryForProducts = async (categoryId) => {
     const products = await getProductsFromCategoryAndQuery(categoryId);
     this.setState({
-      productsByCategory: products.results,
+      results: products.results,
       noResults: false,
     });
     if (products.results.length === 0) {
@@ -65,14 +64,8 @@ export default class Home extends Component {
   };
 
   render() {
-    const {
-      categoryList,
-      loading,
-      inputValue,
-      results,
-      productsByCategory,
-      noResults,
-    } = this.state;
+    const { categoryList, loading, inputValue, results, noResults } =
+      this.state;
     return (
       <>
         <Header
@@ -81,30 +74,8 @@ export default class Home extends Component {
           onInputChange={this.handleChange}
         />
         <main>
-          <h2 className="initialMessage" data-testid="home-initial-message">
-            Digite algum termo de pesquisa ou escolha uma categoria.
-          </h2>
-          <div id="card-container" className="cards">
-            {results &&
-              results.map((result) => (
-                <Link
-                  to={`product/${result.id}`}
-                  key={result.id}
-                  data-testid="product-detail-link"
-                  className="cardLink"
-                >
-                  <Card
-                    name={result.title}
-                    img={result.thumbnail}
-                    price={result.price}
-                  />
-                </Link>
-              ))}
-            {noResults && <h3>Nenhum produto foi encontrado</h3>}
-          </div>
-          {loading ? (
-            <Loading />
-          ) : (
+          {loading && <Loading/>}
+          {categoryList.length && (
             <div className="category">
               {categoryList &&
                 categoryList.map((products) => (
@@ -119,20 +90,20 @@ export default class Home extends Component {
                 ))}
             </div>
           )}
-          <div id="productsCategory" className="cards">
-            {productsByCategory &&
-              productsByCategory.map((products) => (
+          {noResults && <h3>Nenhum produto foi encontrado</h3>}
+          <div id="card-container" className="cards">
+            {results &&
+              results.map((result) => (
                 <Link
-                  to={`product/${products.id}`}
-                  key={products.id}
+                  to={`product/${result.id}`}
+                  key={result.id}
                   data-testid="product-detail-link"
                   className="cardLink"
                 >
                   <Card
-                    data-testid="product"
-                    img={products.thumbnail}
-                    name={products.title}
-                    price={products.price}
+                    name={result.title}
+                    img={result.thumbnail}
+                    price={result.price}
                   />
                 </Link>
               ))}

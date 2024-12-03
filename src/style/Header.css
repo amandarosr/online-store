@@ -4,7 +4,7 @@
 }
 
 header {
-  background-color: #D1C360;
+  background-color: rgb(209, 195, 96, 0.9);
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -70,7 +70,7 @@ header {
 }
 
 #queryBtn:hover {
-  background-color: rgb(107, 33, 56, 0.85);
+  background-color: #b73c63;
 }
 
 #cartBtn {
@@ -81,7 +81,7 @@ header {
 }
 
 #cartBtn:hover {
-  background-color: #9c3153;
+  background-color: #b73c63;
 }
 
 .headerIcon {
