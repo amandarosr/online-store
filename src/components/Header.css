@@ -8,9 +8,8 @@ header {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   border-bottom: #6B2138 solid 4px;
-  /* height */
   width: 100%;
 }
 
@@ -25,7 +24,43 @@ header {
   font-family: TitleFont;
 }
 
-/* #bags {
-  height: 75px;
-  margin: 0 10px 60px 0;
-} */
+#searchDiv {
+  display: flex;
+  justify-content: center;
+  margin: 0 40px 16px 0;
+}
+
+#searchArea {
+  border: solid 3px #6B2138;
+  background-color: #fcfced;
+  height: 30px;
+  width: 260px;
+  margin-right: 15px;
+  border-radius: 25px;
+  font-size: 18px;
+  font-style: italic;
+  margin-top: 2px;
+}
+
+.headBtn {
+  border: solid 3px #611930;
+  background-color: #6B2138;
+  color: #fcfced;
+  cursor: pointer;
+  border-radius: 50px;
+  height: 43px;
+  width: 45px;
+  margin: 0 1px;
+}
+
+.headBtn:hover {
+  background-color: rgb(107, 33, 56, 0.85);
+}
+
+#cartBtn {
+  padding-left: 3px;
+}
+
+.headerPics {
+  height: 22px;
+}

@@ -2,7 +2,8 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./Header.css";
-// import bags from "../images/bags.png";
+import cart from "../images/cart.png";
+import search from "../images/search.png";
 
 export default class Header extends Component {
   render() {
@@ -14,7 +15,7 @@ export default class Header extends Component {
           {/* <img src={bags} alt="logo" id="bags" /> */}
           <h1 id="title">fake•store</h1>
         </div>
-        <div>
+        <div id="searchDiv">
           <label htmlFor="searchArea">
             <input
               type="text"
@@ -29,15 +30,21 @@ export default class Header extends Component {
             <button
               type="button"
               id="queryBtn"
+              className="headBtn"
               data-testid="query-button"
               onClick={clickForProducts}
             >
-              Pesquisar
+              <img src={search} alt="search" className="headerPics" />
             </button>
           </label>
           <Link to="/cartShop" data-testid="shopping-cart-button">
-            <button type="button" name="btn-ShopCart">
-              Carrinho
+            <button 
+            type="button" 
+            name="btn-ShopCart" 
+            id="cartBtn"
+            className="headBtn"
+            >
+              <img src={cart} alt="cart" className="headerPics" />
             </button>
           </Link>
         </div>
