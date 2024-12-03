@@ -4,6 +4,7 @@ import { PropTypes } from 'prop-types';
 import Header from '../components/Header';
 import { getProductById } from '../services/api';
 import Reviews from '../components/Reviews';
+import "../style/ProductDetails.css";
 
 export default class ProductDetails extends Component {
   state = {

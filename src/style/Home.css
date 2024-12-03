@@ -35,7 +35,7 @@ main {
 .cards {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: center;
     margin: 0 50px;
     max-width: 90%;
 }

@@ -1,22 +1,42 @@
 .productCard {
     display: flex;
+    color: rgb(107, 33, 56, 0.9);
     flex-flow: column nowrap;
     align-items: center;
-    margin: 10px 2%;
+    margin: 10px 4%;
 }
 
-span {
-    display: flex;
+.productCard:hover {
+    color: rgb(47, 47, 255);
+    font-weight: 600;
 }
 
 .productImg {
-    border: 2px solid #6B2138;
+    border: 2px solid rgba(117, 38, 63, 0.85);
     border-radius: 5px;
     width: 95%;
 }
 
 .productName {
     text-align: center;
-    height: 60px;
+    font-size: 18px;
+    font-weight: 400;
+    height: 40px;
     overflow-y: hidden;
+}
+
+span {
+    display: flex;
+    color: #3269c9;
+    /* font-weight: 600; */
+    margin-top: -30px
+}
+
+.priceSymbol {
+    font-size: 15px;
+    margin-top: 28px;
+}
+
+.priceNumber {
+    font-size: 26px;
 }
