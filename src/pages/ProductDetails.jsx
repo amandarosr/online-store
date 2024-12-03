@@ -47,6 +47,7 @@ export default class ProductDetails extends Component {
             </ul>
             <span data-testid="product-detail-price">{`R$ ${price}`}</span>
           </div>
+          <button>Adicionar ao carrinho</button>
           <Reviews data={ productData } />
         </main>
       </>
