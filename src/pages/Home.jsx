@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../style/Home.css";
-import Categories from "../components/Categories";
 import Header from "../components/Header";
+import SideMenu from "../components/SideMenu";
 import Card from "../components/Card";
 import {
   getCategories,
   getProductsFromCategoryAndQuery,
 } from "../services/api";
-import xIcon from "../images/close.png";
 
 export default class Home extends Component {
   state = {
@@ -80,28 +79,12 @@ export default class Home extends Component {
           clickToOpenNav={this.clickToOpenNav}
         />
         <main>
-          {openNav && (
-            <div className="sideNav">
-              <button className="navCloseBtn" onClick={this.closeNav}>
-                <img src={xIcon} alt="xIcon" id="xIcon" />
-              </button>
-              {categoryList.length && (
-                <div className="category">
-                  {categoryList &&
-                    categoryList.map((products) => (
-                      <Categories
-                        categoryProducts={() =>
-                          this.clickCategoryForProducts(products.id)
-                        }
-                        key={products.id}
-                        name={products.name}
-                        value={products.name}
-                      />
-                    ))}
-                </div>
-              )}
-            </div>
-          )}
+          <SideMenu
+            closeNav={this.closeNav}
+            categoryList={categoryList}
+            clickCategoryForProducts={this.clickCategoryForProducts}
+            openNav={openNav}
+          />
           <div id="card-container" className="cards">
             {noResults && <h3>Nenhum produto foi encontrado</h3>}
             {results &&
