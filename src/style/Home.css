@@ -20,6 +20,8 @@ main {
   height: 100vh;
   overflow-y: scroll;
   min-width: 18%;
+  scrollbar-color: #FCFCED #6b2138;
+  scrollbar-width: thin;
 }
 
 .navCloseBtn {
@@ -35,7 +37,7 @@ main {
 }
 
 #xIcon:hover {
-  height: 25px;
+  height: 24px;
 }
 
 .category {
@@ -76,7 +78,7 @@ main {
 footer {
   background-color: rgb(209, 195, 96, 0.8);
   border-top: 2px solid rgb(107, 33, 56, 0.6);
-  color: rgb(107, 33, 56);
+  color: #6b2138;
   text-align: center;
   font-weight: 600;
   font-family: TitleFont;

@@ -15,21 +15,24 @@ header {
 
 .left-head {
   display: flex;
+  align-items: center;
   margin: 0 0 -45px 35px;
 }
 
 #menuBtn {
   background: none;
   border: none;
-  margin-right: 10px;
+  height: 65px;
+  margin: 0 8px 5px 0;
 }
 
 #menuIcon {
   height: 65px;
 }
 
-#menuIcon:hover {
-  height: 70px;
+#menuBtn:hover {
+  background-color: rgb(183, 60, 99, 0.15);
+  border-radius: 20px
 }
 
 #title {
