@@ -16,7 +16,7 @@ export default class Home extends Component {
     inputValue: "",
     results: [],
     noResults: false,
-    openNav: true,
+    openNav: false,
   };
 
   componentDidMount() {

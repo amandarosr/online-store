@@ -8,7 +8,7 @@
 }
 
 .productCard:hover {
-    color: rgb(247, 77, 77);
+    font-weight: 600;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 

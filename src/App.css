@@ -1,3 +1,9 @@
+@font-face {
+  font-family: MainFont;
+  src: url("./images/Gontserrat-Regular.ttf");
+}
+
 body {
   background-color: #fcfced;
+  font-family: MainFont;
 }
