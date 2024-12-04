@@ -1,0 +1,36 @@
+@font-face {
+  font-family: TitleFont;
+  src: url("../images/Aurora.otf");
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 75vh;
+}
+
+.cards {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 25px 40px;
+  max-width: 90%;
+}
+
+.cardLink {
+  text-decoration: none;
+  width: 200px;
+}
+
+footer {
+  background-color: rgb(209, 195, 96, 0.8);
+  border-top: 2px solid rgb(107, 33, 56, 0.6);
+  color: #6b2138;
+  text-align: center;
+  font-weight: 600;
+  font-family: TitleFont;
+  height: 7vh;
+  padding: -5px 0 5px;
+  margin-top: 30px;
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Review from './Review';
-import './Reviews.css';
+import "../style/Reviews.css";
 
 class Reviews extends React.Component {
   state = {

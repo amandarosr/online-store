@@ -1,0 +1,51 @@
+.sideNav {
+  background-color: rgb(107, 33, 56, 0.95);
+  display: flex;
+  flex-flow: column nowrap;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  overflow-y: scroll;
+  min-width: 18%;
+  scrollbar-color: #fcfced #6b2138;
+  scrollbar-width: thin;
+}
+
+.navCloseBtn {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  margin-top: 20px;
+  width: 25%;
+}
+
+#xIcon {
+  height: 23px;
+}
+
+#xIcon:hover {
+  height: 24px;
+}
+
+.category {
+  color: #fcfced;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  margin: 0 0 10px 5px;
+  font-size: 17px;
+  padding: 10px;
+}
+
+.aside {
+  margin: 7px 5px;
+}
+
+.aside label:hover {
+  font-weight: 600;
+}
+
+.aside input[type="radio"] {
+  appearance: none;
+}

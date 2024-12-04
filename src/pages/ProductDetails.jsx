@@ -4,6 +4,7 @@ import { PropTypes } from 'prop-types';
 import Header from '../components/Header';
 import { getProductById } from '../services/api';
 import Reviews from '../components/Reviews';
+import "../style/ProductDetails.css";
 
 export default class ProductDetails extends Component {
   state = {
@@ -47,6 +48,7 @@ export default class ProductDetails extends Component {
             </ul>
             <span data-testid="product-detail-price">{`R$ ${price}`}</span>
           </div>
+          <button>Adicionar ao carrinho</button>
           <Reviews data={ productData } />
         </main>
       </>
