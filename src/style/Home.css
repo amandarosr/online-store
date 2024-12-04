@@ -10,34 +10,61 @@ main {
   min-height: 75vh;
 }
 
-.category {
-  color: #430f1f;
+.sideNav {
+  background-color: #6B2138;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  margin: 45px 20px 30px;
-  font-size: 18px;
-  height: 135px;
-  padding: 10px;
+  flex-flow: column nowrap;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
   overflow-y: scroll;
-  scrollbar-color: #d1c360 white;
-  scrollbar-width: thin;
+  min-width: 18%;
+}
+
+.navCloseBtn {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  margin-top: 10px;
+  width: 25%;
+}
+
+#xIcon {
+  height: 25px;
+}
+
+#xIcon:hover {
+  height: 28px;
+}
+
+.category {
+  color: #FCFCED;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  margin: 0 0 10px 5px;
+  font-size: 20px;
+  padding: 10px;
 }
 
 .aside {
-  margin: 5px;
+  margin: 7px 5px;
+}
+
+.aside label:hover {
+  font-weight: 600;
 }
 
 .aside input[type="radio"] {
-  accent-color: #430f1f;
-  height: 11px;
+  appearance: none;
 }
 
 .cards {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  margin: 15px 40px;
+  margin: 25px 40px;
   max-width: 90%;
 }
 

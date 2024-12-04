@@ -3,25 +3,25 @@ import { Link } from "react-router-dom";
 import "../style/Home.css";
 import Categories from "../components/Categories";
 import Header from "../components/Header";
-import Loading from "../components/Loading";
 import Card from "../components/Card";
 import {
   getCategories,
   getProductsFromCategoryAndQuery,
 } from "../services/api";
+import xIcon from "../images/close.png";
 
 export default class Home extends Component {
   state = {
     categoryList: [],
-    loading: false,
     inputValue: "",
     results: [],
     noResults: false,
+    openNav: true,
   };
 
   componentDidMount() {
     this.fetchCategoryList();
-    this.clickCategoryForProducts("MLB1246");
+    this.clickCategoryForProducts("MLB1039");
   }
 
   handleChange = ({ target }) => {
@@ -29,10 +29,14 @@ export default class Home extends Component {
     this.setState({ [name]: value });
   };
 
+  clickToOpenNav = () => this.setState({ openNav: true });
+
+  closeNav = () => this.setState({ openNav: false });
+
   fetchCategoryList = async () => {
     this.setState({ loading: true });
     const categories = await getCategories();
-    this.setState({ categoryList: categories, loading: false });
+    this.setState({ categoryList: categories });
   };
 
   clickForProducts = async () => {
@@ -55,6 +59,7 @@ export default class Home extends Component {
     this.setState({
       results: products.results,
       noResults: false,
+      openNav: false,
     });
     if (products.results.length === 0) {
       this.setState({
@@ -64,7 +69,7 @@ export default class Home extends Component {
   };
 
   render() {
-    const { categoryList, loading, inputValue, results, noResults } =
+    const { categoryList, inputValue, results, noResults, openNav } =
       this.state;
     return (
       <>
@@ -72,26 +77,33 @@ export default class Home extends Component {
           clickForProducts={this.clickForProducts}
           inputValue={inputValue}
           onInputChange={this.handleChange}
+          clickToOpenNav={this.clickToOpenNav}
         />
         <main>
-          {loading && <Loading/>}
-          {categoryList.length && (
-            <div className="category">
-              {categoryList &&
-                categoryList.map((products) => (
-                  <Categories
-                    categoryProducts={() =>
-                      this.clickCategoryForProducts(products.id)
-                    }
-                    key={products.id}
-                    name={products.name}
-                    value={products.name}
-                  />
-                ))}
+          {openNav && (
+            <div className="sideNav">
+              <button className="navCloseBtn" onClick={this.closeNav}>
+                <img src={xIcon} alt="xIcon" id="xIcon" />
+              </button>
+              {categoryList.length && (
+                <div className="category">
+                  {categoryList &&
+                    categoryList.map((products) => (
+                      <Categories
+                        categoryProducts={() =>
+                          this.clickCategoryForProducts(products.id)
+                        }
+                        key={products.id}
+                        name={products.name}
+                        value={products.name}
+                      />
+                    ))}
+                </div>
+              )}
             </div>
           )}
-          {noResults && <h3>Nenhum produto foi encontrado</h3>}
           <div id="card-container" className="cards">
+            {noResults && <h3>Nenhum produto foi encontrado</h3>}
             {results &&
               results.map((result) => (
                 <Link
