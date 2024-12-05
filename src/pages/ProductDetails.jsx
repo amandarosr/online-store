@@ -1,9 +1,9 @@
-import { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { PropTypes } from 'prop-types';
-import Header from '../components/Header';
-import { getProductById } from '../services/api';
-import Reviews from '../components/Reviews';
+import { Component } from "react";
+import { Link } from "react-router-dom";
+import { PropTypes } from "prop-types";
+import Header from "../components/Header";
+import { getProductById } from "../services/api";
+import Reviews from "../components/Reviews";
 import "../style/ProductDetails.css";
 
 export default class ProductDetails extends Component {
@@ -17,7 +17,9 @@ export default class ProductDetails extends Component {
 
   fetchProduct = async () => {
     const { match } = this.props;
-    const { params: { id } } = match;
+    const {
+      params: { id },
+    } = match;
     const productData = await getProductById(id);
     this.setState({ productData });
   };
@@ -31,26 +33,36 @@ export default class ProductDetails extends Component {
         <Header />
         <main>
           <Link to="/">Voltar</Link>
-          <div>
-            <h3 data-testid="product-detail-name">
-              {title}
-            </h3>
-            <img src={ thumbnail } alt={ title } data-testid="product-detail-image" />
+              <h3 data-testid="product-detail-name">{title}</h3>
+          <div className="contentCase">
+            <div>
+              <img
+                src={thumbnail}
+                alt={title}
+                data-testid="product-detail-image"
+                id="productDetailImage"
+              />
+            </div>
+            <div className="productDetailSpecs">
+              <h3>Especificações técnicas</h3>
+              <ul>
+                <li>Lorem ipsum dolor sit</li>
+                <li>Veniam, expedita reprehenderit error </li>
+                <li>At iste tempora pariatur!</li>
+                <li>Sequi dolores quas</li>
+                <li>
+                  Illo suscipit voluptas veritatis ipsa possimus iste assumenda
+                </li>
+              </ul>
+              <div id="product-detail-price">{`R$ ${price}`}</div>
+              <button>Adicionar ao carrinho</button>
+            </div>
           </div>
-          <div>
-            <h3>Especificações técnicas</h3>
-            <ul>
-              <li>Lorem ipsum dolor sit</li>
-              <li>Veniam, expedita reprehenderit error </li>
-              <li>At iste tempora pariatur!</li>
-              <li>Sequi dolores quas</li>
-              <li>Illo suscipit voluptas veritatis ipsa possimus iste assumenda</li>
-            </ul>
-            <span data-testid="product-detail-price">{`R$ ${price}`}</span>
-          </div>
-          <button>Adicionar ao carrinho</button>
-          <Reviews data={ productData } />
+          <Reviews data={productData} />
         </main>
+        <footer>
+          <p>© 2024 fake•store. All Rights Reserved</p>
+        </footer>
       </>
     );
   }

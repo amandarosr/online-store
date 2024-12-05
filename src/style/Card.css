@@ -15,7 +15,10 @@
 .productImg {
     border: 2px solid rgba(117, 38, 63, 0.7);
     border-radius: 5px;
+    background-color: #FFFFFF;
+    object-fit: contain;
     width: 85%;
+    height: 160px;
     margin-top: 10px;
 }
 

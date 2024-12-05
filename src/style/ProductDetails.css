@@ -1,0 +1,21 @@
+.contentCase {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#productDetailImage {
+    height: 17rem;
+    object-fit: contain;
+    margin: 10px 20px;
+}
+
+.productDetailSpecs {
+    display: flex;
+    flex-direction: column;
+}
+
+.productDetailSpecs h3 {
+    text-align: center;
+}
