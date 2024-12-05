@@ -26,11 +26,13 @@ main {
 footer {
   background-color: rgb(209, 195, 96, 0.8);
   border-top: 2px solid rgb(107, 33, 56, 0.6);
+  position: relative;
+  top: 9px;
   color: #6b2138;
   text-align: center;
   font-weight: 600;
   font-family: TitleFont;
-  height: 7vh;
-  padding: -5px 0 5px;
+  height: 6vh;
+  padding: -15px 0 5px;
   margin-top: 30px;
 }
