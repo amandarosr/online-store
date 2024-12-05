@@ -1,5 +1,5 @@
 .productDetailMain {
-  height: 80vh;
+  min-height: 80.9vh;
 }
 
 .contentCase {
@@ -12,18 +12,25 @@
 #productDetailImage {
   height: 17rem;
   object-fit: contain;
-  margin: 10px 20px;
+  margin: 10px 30px;
 }
 
 .productDetailSpecs {
   display: flex;
   flex-direction: column;
+  max-width: 23rem;
 }
 
 .productDetailSpecs h3 {
   text-align: center;
+  font-size: 18px;
+}
+
+#bottomInfo {
+    display: flex;
 }
 
 #product-detail-price {
   display: flex;
+  justify-content: space-between;
 }

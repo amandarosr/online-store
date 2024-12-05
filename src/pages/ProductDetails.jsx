@@ -30,7 +30,7 @@ export default class ProductDetails extends Component {
 
     return (
       <>
-        <HeaderSimple/>
+        <HeaderSimple />
         <main className="productDetailMain">
           <Link to="/">Voltar</Link>
           <h3 data-testid="product-detail-name">{title}</h3>
@@ -54,11 +54,13 @@ export default class ProductDetails extends Component {
                   Illo suscipit voluptas veritatis ipsa possimus iste assumenda
                 </li>
               </ul>
-              <div id="product-detail-price">
-                <p>R$</p>
-                <p>{price}</p>
+              <div id="bottomInfo">
+                <div id="product-detail-price">
+                  <p>R$</p>
+                  <p>{price}</p>
+                </div>
+                <button>Adicionar ao carrinho</button>
               </div>
-              <button>Adicionar ao carrinho</button>
             </div>
           </div>
           <Reviews data={productData} />

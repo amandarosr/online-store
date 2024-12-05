@@ -71,7 +71,7 @@ export default class Home extends Component {
     const { categoryList, inputValue, results, noResults, openNav } =
       this.state;
     return (
-      <>
+      <div className="fullpage">
         <Header
           clickForProducts={this.clickForProducts}
           inputValue={inputValue}
@@ -107,7 +107,7 @@ export default class Home extends Component {
         <footer>
           <p>© 2024 fake•store. All Rights Reserved</p>
         </footer>
-      </>
+      </div>
     );
   }
 }
