@@ -1,10 +1,10 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
 import { PropTypes } from "prop-types";
-import Header from "../components/Header";
 import { getProductById } from "../services/api";
 import Reviews from "../components/Reviews";
 import "../style/ProductDetails.css";
+import cart from "../images/cart.png";
 
 export default class ProductDetails extends Component {
   state = {
@@ -30,10 +30,21 @@ export default class ProductDetails extends Component {
 
     return (
       <>
-        <Header />
-        <main>
+        <header className="secondHeader">
+          <h1 id="secondTitle">fake•store</h1>
+          <Link to="/cartShop" id="shopping-cart-link">
+            <button
+              type="button"
+              name="btn-ShopCart"
+              className="secondHeaderBtn"
+            >
+              <img src={cart} alt="cart" className="secondHeaderIcon" />
+            </button>
+          </Link>
+        </header>
+        <main className="productDetailMain">
           <Link to="/">Voltar</Link>
-              <h3 data-testid="product-detail-name">{title}</h3>
+          <h3 data-testid="product-detail-name">{title}</h3>
           <div className="contentCase">
             <div>
               <img
@@ -54,7 +65,10 @@ export default class ProductDetails extends Component {
                   Illo suscipit voluptas veritatis ipsa possimus iste assumenda
                 </li>
               </ul>
-              <div id="product-detail-price">{`R$ ${price}`}</div>
+              <div id="product-detail-price">
+                <p>R$</p>
+                <p>{price}</p>
+              </div>
               <button>Adicionar ao carrinho</button>
             </div>
           </div>

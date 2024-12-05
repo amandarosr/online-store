@@ -1,21 +1,68 @@
+@font-face {
+  font-family: TitleFont;
+  src: url("../images/Aurora.otf");
+}
+
+.secondHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: 4.6rem;
+}
+
+#secondTitle {
+  color: #6b2138;
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.12);
+  font-size: 43px;
+  font-family: TitleFont;
+  margin: 10px 13px 10px 0;
+}
+
+.secondHeaderBtn {
+  border: solid 1px rgb(97, 26, 48, 0.5);
+  background-color: #6b2138;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 25px;
+  margin: 0 20px 30px 0; 
+  height: 45px;
+  width: 65px;
+}
+
+.secondHeaderIcon{
+    height: 30px;
+    padding: 2px 3px 0 0;
+}
+
+.secondHeaderBtn:hover {
+    background-color: #b73c63
+}
+
+.productDetailMain {
+  height: 80vh;
+}
+
 .contentCase {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 #productDetailImage {
-    height: 17rem;
-    object-fit: contain;
-    margin: 10px 20px;
+  height: 17rem;
+  object-fit: contain;
+  margin: 10px 20px;
 }
 
 .productDetailSpecs {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .productDetailSpecs h3 {
-    text-align: center;
+  text-align: center;
+}
+
+#product-detail-price {
+  display: flex;
 }
