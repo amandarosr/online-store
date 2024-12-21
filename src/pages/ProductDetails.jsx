@@ -32,8 +32,7 @@ export default class ProductDetails extends Component {
       <>
         <HeaderSimple />
         <main className="productDetailMain">
-          <Link to="/">Voltar</Link>
-          <h3 data-testid="product-detail-name">{title}</h3>
+          <h3 id="product-detail-name">{title}</h3>
           <div className="contentCase">
             <div>
               <img

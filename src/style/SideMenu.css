@@ -13,19 +13,15 @@
 }
 
 .navCloseBtn {
-  align-self: flex-end;
+  align-self: baseline;
   background: none;
   border: none;
-  margin-top: 20px;
+  margin: 20px 0 5px 10px;
   width: 25%;
 }
 
 #xIcon {
   height: 23px;
-}
-
-#xIcon:hover {
-  height: 24px;
 }
 
 .category {
@@ -43,7 +39,7 @@
 }
 
 .aside label:hover {
-  font-weight: 600;
+  text-decoration: underline;
 }
 
 .aside input[type="radio"] {
