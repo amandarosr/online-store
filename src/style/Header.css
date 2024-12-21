@@ -16,7 +16,7 @@ header {
 .left-head {
   display: flex;
   align-items: center;
-  margin: -20px 0 -45px 35px;
+  margin: -20px 0 -45px 30px;
 }
 
 #menuBtn {
@@ -45,7 +45,7 @@ header {
 #searchDiv {
   display: flex;
   justify-content: center;
-  margin: 0 35px 16px 20px;
+  margin: 0 30px 16px 20px;
 }
 
 #searchArea {
