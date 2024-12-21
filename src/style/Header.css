@@ -16,7 +16,7 @@ header {
 .left-head {
   display: flex;
   align-items: center;
-  margin: 0 0 -45px 35px;
+  margin: -20px 0 -45px 25px;
 }
 
 #menuBtn {
